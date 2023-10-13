@@ -7,17 +7,17 @@ public class Book {
 
     private int bookID;
     private String author;
-    private String name;
+    private String title;
     private double price;
     private String status;
     private String  edition;
     private  String  dateOfPurchase;
     private Genre genre;   /// Genre enum kullanılacak türler sabit olacağına karar verdim.
 
-    public Book(int bookID, String author, String name, double price, String status, String edition, String dateOfPurchase, Genre genre) {
+    public Book(int bookID, String author, String title, double price, String status, String edition, String dateOfPurchase, Genre genre) {
         this.bookID = bookID;
         this.author = author;
-        this.name = name;
+        this.title = title;
         this.price = price;
         this.status = status;
         this.edition = edition;
@@ -41,12 +41,12 @@ public class Book {
         this.author = author;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String name) {
+        this.title = name;
     }
 
     public double getPrice() {
@@ -107,7 +107,7 @@ public class Book {
         return "Book{" +
                 "bookID=" + bookID +
                 ", author='" + author + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + title + '\'' +
                 ", price=" + price +
                 ", status='" + status + '\'' +
                 ", edition='" + edition + '\'' +
