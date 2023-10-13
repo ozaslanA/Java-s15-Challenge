@@ -1,8 +1,11 @@
+                    // ABSTRACT BİR PERSON SINIFI
+                    //Soyut bir kavramı temsil ediyor,başka sınıfların temelini oluşturacak(Author,Reader vb gibi)
+
+
+
 package com.workintech.library.Model;
 import com.workintech.library.Enum.Role;
-
 import java.util.Objects;
-
 public  abstract class Person {
     private int id;
     private String name;

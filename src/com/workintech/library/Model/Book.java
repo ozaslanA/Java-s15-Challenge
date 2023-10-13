@@ -1,3 +1,7 @@
+                                        // BOOK SINIFI
+                                   //     Book sınıfı bir kitabın özelliklerini temsil eder.
+
+
 package com.workintech.library.Model;
 import com.workintech.library.Enum.Genre;
 
@@ -10,11 +14,11 @@ public class Book {
     private String title;
     private double price;
     private String status;
-    private String  edition;
+    private int  edition;
     private  String  dateOfPurchase;
     private Genre genre;   /// Genre enum kullanılacak türler sabit olacağına karar verdim.
 
-    public Book(int bookID, String author, String title, double price, String status, String edition, String dateOfPurchase, Genre genre) {
+    public Book(int bookID, String author, String title, double price, String status, int edition, String dateOfPurchase, Genre genre) {
         this.bookID = bookID;
         this.author = author;
         this.title = title;
@@ -65,11 +69,11 @@ public class Book {
         this.status = status;
     }
 
-    public String getEdition() {
+    public int getEdition() {
         return edition;
     }
 
-    public void setEdition(String edition) {
+    public void setEdition(int edition) {
         this.edition = edition;
     }
 
@@ -89,6 +93,9 @@ public class Book {
         this.genre = genre;
     }
 
+
+
+                    // equals sadece ID için yazıldı çünkü bizi eşşsiz kılacak ID olur asla aynı ID çakışmaz
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

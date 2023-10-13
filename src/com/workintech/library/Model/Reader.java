@@ -1,7 +1,8 @@
+                              //OKUYUCU PERSON SINIFINDAN TÜRER
+
+
 package com.workintech.library.Model;
-
 import com.workintech.library.Enum.Role;
-
 import java.util.Set;
 
 public class Reader extends Person {
@@ -21,7 +22,7 @@ public class Reader extends Person {
 
 
     }
-
+                        // GETTER VE SETTLER
     public double getBillAmount() {
         return billAmount;
     }
@@ -45,6 +46,8 @@ public class Reader extends Person {
     public void setBookLimit(int bookLimit) {
         this.bookLimit = bookLimit;
     }
+
+
 
     // İlk olarak, book parametresi olarak gelen kitaptan fiyatını alıyoruz.
     public void satinAlinanKitap(Book book){
@@ -74,7 +77,8 @@ public class Reader extends Person {
         public void borrowBooks(Book book){
         if(borrowedBooks.size() <bookLimit){
             borrowedBooks.add(book);
-            book.setStatus("Eklendi");
+
+
             System.out.println( getName() +" "+ "Tarafından " + book.getTitle() + "Adlı kitap Ödünç Alındı");
 
         }else{
@@ -91,7 +95,6 @@ public class Reader extends Person {
         public  void returnBook(Book book){
         if(borrowedBooks.contains(book)){
             borrowedBooks.remove(book);
-            book.setStatus("durum güncelleniyor");
             System.out.println(getName()+ " " + "tarafından iade edildi ve listeden silindi");
         }else {
             System.out.println("İşlem Başarısız bu Kitap bize ait değilki "
@@ -122,7 +125,7 @@ public class Reader extends Person {
 
     @Override
     public Role getRole() {
-        return super.getRole();
+        return Role.USER;
     }
     @Override
     public String toString() {

@@ -1,3 +1,6 @@
+                    // YAZAR SINIFIMIZ
+  //yazarın yazdığı kitapları yönetir. Ayrıca, yeni kitap ekleyebilir, yazdığı kitapları gösterebilir
+
 package com.workintech.library.Model;
 
 import com.workintech.library.Enum.Role;
@@ -12,7 +15,7 @@ public class Author extends Person {
 
     // Consturctorları yazdık
     public Author(int id, String name, Role role) {
-        super(id, name, role);
+        super(id, name, role);             // SUPER üst sınıftaki Constructorları çağırır.
         this.booksAuthored = new ArrayList<>();
     }
 
@@ -29,29 +32,25 @@ public class Author extends Person {
 
 
 
-    /// YENİ KİTAP EKLEDİK  VE  KİTABIN ADINI YAZDIRDIK
+    /// YENİ KİTAP EKLER  VE  KİTABIN ADINI YAZDIRIR
     public void newBook(Book book){
         booksAuthored.add(book);
-        System.out.println("Yeni Kitap Eklendi Eklenen Kitap:" + book.getTitle());
+        System.out.println("Yazarımız Yeni Bir Kitap Ekledi:" + book.getTitle());
     }
 
 
     //Bu metodun görevi, Author'ın yazdığı kitapları listeleyerek göstermektir.
 
-    public  void showBooks(){
-        for(Book book : booksAuthored){
-            System.out.println(" - " + book.getTitle());
-        }
-    }
 
 
 
-    //u tür bir metodun kullanılması, programın ilerleyen aşamalarında, bir nesnenin hangi türden
-    // olduğunu anlamak ve buna göre işlemler yapmak için f
+
+ // Kullanıcımız kim Burada Role enumu override ederiz ve kullanıcımızın AUTHOR OLDUĞUNU SÖYLERİZ.
     @Override
     public Role getRole() {
-        return super.getRole();
+        return Role.AUTHOR;
     }
+
 
     @Override
     public String toString() {
